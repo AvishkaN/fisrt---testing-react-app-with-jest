@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Greeting() {
+    const [changedText,setChangedText]=useState(true);
+
+    const changeTextHandler=()=>{ 
+        setChangedText(false);
+    };
+
     return (
         <div>
-            <h1>hello  world !</h1>
+            {changedText && <p>unchaned text</p>}
+            {changedText && <p>good to see</p>}
+            {!changedText && <p>chaned</p>}
+            <button onClick={changeTextHandler}>tttt</button>
         </div>
     )
 }
