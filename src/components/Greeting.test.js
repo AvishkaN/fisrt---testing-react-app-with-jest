@@ -18,23 +18,7 @@ describe('Greeting component',()=>{
     //     expect(helloWorldElement).toBeInTheDocument;
     // });
 
-    test('test use button clicked !',()=>{
-        // arrange
-        render(<Greeting/>);
-
-        // act
-        const buttonElement =screen.getByRole('button');
-        userEvent.click(buttonElement );
-
-        // assert
-        // const outputElement=screen.getByText('changed text');
-        // expect(outputElement).toBeInTheDocument();
-
-        const outputElement = screen.getByText('chaned');
-        expect(outputElement).toBeInTheDocument();
-
-    })
-    // test('doe not render good to see !',()=>{
+    // test('test use button clicked !',()=>{
     //     // arrange
     //     render(<Greeting/>);
 
@@ -43,10 +27,26 @@ describe('Greeting component',()=>{
     //     userEvent.click(buttonElement );
 
     //     // assert
-    //     const outputElement = screen.queryByText('good to see',{exact:false});
-    //     expect(outputElement).toBeNull();
+    //     // const outputElement=screen.getByText('changed text');
+    //     // expect(outputElement).toBeInTheDocument();
+
+    //     const outputElement = screen.getByText('chaned');
+    //     expect(outputElement).toBeInTheDocument();
 
     // })
+    test('doe not render good to see !',()=>{
+        // arrange
+        render(<Greeting/>);
+
+        // act
+        const buttonElement =screen.getByRole('button');
+        userEvent.click(buttonElement );
+
+        // assert
+        const outputElement = screen.queryByText('good to see',{exact:false});
+        expect(outputElement).toBeNull();
+
+    })
 
 });
 
