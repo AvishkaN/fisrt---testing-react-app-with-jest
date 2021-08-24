@@ -5,6 +5,7 @@ import Async from './Async';
 
 describe('Async component', () => {
   test('renders posts if request succeeds', async () => {
+      
     // working with mock
     window.fetch=jest.fn();
     window.fetch.mockResolvedValueOnce({
